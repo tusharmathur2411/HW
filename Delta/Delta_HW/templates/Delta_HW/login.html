@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DELTA</title>
+    <h3>Login</h3>
+</head>
+<body>
+    <form action="index" method="POST">{% csrf_token %}
+        <label for="user_id">User ID</label>
+        <input type="text" name="user_id" id="user_id" value={{ user.scur }}><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"><br>
+        {% if fail %}
+          <a>Login Failed : {{ fail }}</a><br><br>
+        {% endif %}
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+</html>
