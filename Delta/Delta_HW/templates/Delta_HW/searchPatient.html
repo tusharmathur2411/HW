@@ -1,0 +1,15 @@
+{% extends "Delta_HW/base.html" %}
+{% block head %}<h3>Patients</h3>{% endblock %}
+
+{% block content %}
+    <form action="search_patients" method="POST">{% csrf_token %}
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" value="{{ first_name }}">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" value="{{ last_name }}">
+        <input type="submit" value="Search">
+    </form>
+
+    {% include "Delta_HW/listPatient.html" %}
+    <a href="createPatient"><button>Create New</button> </a>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DELTA</title>
+    {% block head %}{% endblock %}
+    <a>{{ current_user }}</a>
+<!--    <a href="{% url 'Delta_HW:index' %}" value="logout" name="logout"><button>Logout</button></a>-->
+    <form action="{% url 'Delta_HW:logout' %}" method="POST">{% csrf_token %}<button type="submit">Logout</button></form>
+    <form action="{% url 'Delta_HW:index' %}"><button type="submit">Home</button></form>
+
+</head>
+
+<body>
+<br><br><br>
+{% block content %}{% endblock %}
+</body>
+</html>

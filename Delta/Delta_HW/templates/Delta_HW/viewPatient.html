@@ -1,0 +1,17 @@
+{% extends "Delta_HW/base.html" %}
+{% block head %}<h3>Patient Profile : {{ patient }}</h3>{% endblock %}
+
+{% block content %}
+    <form action="viewPatient" method="POST">{% csrf_token %}
+         <label for="{{ patient_form.first_name.id_for_label }}">First Name:</label>
+        {{ patient_form.first_name }}
+        <label for="{{ patient_form.last_name.id_for_label }}">Last Name:</label>
+        {{ patient_form.last_name }}
+        <label for="{{ patient_form.birthday.id_for_label }}">Birthday:</label>
+        {{ patient_form.birthday }}
+        <label for="{{ patient_form.gender.id_for_label }}">Gender:</label>
+        {{ patient_form.gender }}
+        {{ address_form.as_p }}
+        <input type="submit" value="save">
+    </form>
+{% endblock %}

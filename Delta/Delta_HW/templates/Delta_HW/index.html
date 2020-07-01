@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "Delta_HW/base.html" %}
+
+{% block head %}
     <meta charset="UTF-8">
     <title>DELTA</title>
     <h3>Homepage</h3>
-    <h6>{{ current_user }}</h6>
-</head>
-<body>{% csrf_token %}
-  <a href="users" name="current_user" value={{ current_user }}><button>Users</button></a>
+{% endblock %}
+
+{% block content %}{% csrf_token %}
+    <a href="search_patients"><button>Patients</button></a>
+    <a href="users"><button>Users</button></a>
   <!-- <a href="users" name="delete_scur" value={{ user.scur }}><button>Delete User</button></a>
   <a href="users" name="delete_scur" value={{ user.scur }}><button>Delete User</button></a> -->
-</body>
-</html>
+{% endblock %}

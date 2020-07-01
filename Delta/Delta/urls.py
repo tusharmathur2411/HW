@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import include,path
 
 urlpatterns = [
-    path('Delta_HW/', include('Delta_HW.urls')),
+    path('Delta_HW/', include('Delta_HW.urls', namespace='Delta_HW')),
     path('admin/', admin.site.urls),
 ]

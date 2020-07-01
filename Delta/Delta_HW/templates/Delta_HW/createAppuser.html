@@ -1,0 +1,16 @@
+{% extends "Delta_HW/base.html" %}
+{% block head %}<h3>New User</h3>{% endblock %}
+
+{% block content %}
+    <form action="newuser" method="POST">{% csrf_token %}
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name"><br>
+        <label for="password1">Password</label>
+        <input type="password" id="password1" name="password1"><br>
+        <label for="password2">Re-Enter Password</label>
+        <input type="password" id="password2" name="password2"><br>
+        <input type="submit" value="Add User">
+    </form>
+{% endblock %}

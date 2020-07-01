@@ -6,7 +6,7 @@
     <h3>Login</h3>
 </head>
 <body>
-    <form action="index" method="POST">{% csrf_token %}
+    <form action="{% url 'Delta_HW:index' %}" method="POST">{% csrf_token %}
         <label for="user_id">User ID</label>
         <input type="text" name="user_id" id="user_id" value={{ user.scur }}><br>
         <label for="password">Password</label>

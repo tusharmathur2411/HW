@@ -1,0 +1,22 @@
+{% if patients %}
+    <table style="width:95%">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birthday</th>
+        </tr>
+        {% for patient in patients %}
+            <tr>
+                <td>{{ patient.first_name }}</td>
+                <td>{{ patient.last_name }}</td>
+                <td>{{ patient.birthday }}</td>
+                <td>
+                    <form action="viewPatient" method="POST">{% csrf_token %}
+                        <input type="hidden" value={{ patient.paaa_id }} name="paaa_id">
+                        <input type="submit" value="View">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
